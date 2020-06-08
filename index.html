@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SportShop</title>
+    <link rel="icon" href="sporticon.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="JavaScript.js"></script>
+</head>
+<body>
+    <header class="head">
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+            <a class="navbar-brand">Sport Shop </a>
+            <button type="button" class="ttt" data-toggle="modal" data-target="#cartModal" onclick="startCart()">
+                <img src="shopping-cart.png" class="shopping-cart">
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="modal left fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="heading"><strong>Your Shopping Cart</strong></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                    </div>
+                    <div class="footer">
+                        <h4 class="text-center" id="total"></h4>
+                        <button class="btn btn-cart" id="clear" onclick="removeall()">clear<i class="far fa-gem ml-1 white-text"></i></button>
+
+                        <button class="btn btn-cart" id="placeOrder">place order<i class="far fa-gem ml-1 white-text"></i></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="main" id="home">
+        <h2>Our Products</h2>
+        <div class="card-columns">
+            <div class="card">
+                <div class="card-item">
+                    <img src="yoga_mat.png" alt="Yoga Mat" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">Yoga Mat</h4>
+                        <p class="card-text">100$</p>
+                        <p> Blue yoga mat waterproof and easy to clean.Suitable for yoga knee mats .everyone need it         </p>
+                        <button class="btn btn-cart" onclick="addToCart('Yoga Mat', 100, 'yoga_mat.png')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item">
+                    <img src="Jumprope.png" alt="Jump rope" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">Jump Rope</h4>
+                        <p class="card-text">10$</p>
+                        <p>Jump ropes are a great way to work on your strength, endurance, speed and explosiveness.</p>
+                        <button class="btn btn-cart" onclick="addToCart('Jump Rope', 10, 'Jumprope.png')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item">
+                    <img src="2KgWeights.png" alt="2KgWeights" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">2Kg Weights</h4>
+                        <p class="card-text">60$</p>
+                        <p>These dumbbells are perfect for helping you build your fitness and your confidence as you workout at home.</p>
+                        <button class="btn btn-cart" onclick="addToCart('2Kg Weights', 60, '2KgWeights.png')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item">
+                    <img src="5KgWeights.png" alt="5KgWeights" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">5Kg Weights</h4>
+                        <p class="card-text">68$</p>
+                        <p>These dumbbells are perfect for helping you build your fitness and your confidence as you workout at home. </p>
+                        <button class="btn btn-cart" onclick="addToCart('5Kg Weights', 68, '5KgWeights.png')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item">
+                    <img src="Pilatesring.png" alt="Pilates ring" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">Pilates ring</h4>
+                        <p class="card-text">70$</p>
+                        <p>High Quality Comfortable Sport Training Ring Women Fitness Kinetic Resistance Pilates Circle</p>
+                        <button class="btn btn-cart" onclick="addToCart('Pilates ring', 70, 'Pilatesring.png')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item">
+                    <img src="aerobicstep1.png" alt="Aerobicstep" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">Aerobic step</h4>
+                        <p class="card-text">70$</p>
+                        <p>Home and Gym Fitness plastic Aerobic Step Gym Equipment Soft Oxygen Aerobic Step </p>
+                        <button class="btn btn-cart" onclick="addToCart('Aerobic step', 70, 'aerobicstep1.png')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div>
+            <h2>Our Story</h2>
+            <p class="about-content">Our story comes from a very significant need for sports, as a teenager I was a very fat person.
+                <br/>The kids at school always laughed at me and I decided to start taking myself in the weeds and lose weight so I decided to start doing sports.
+                <br/>  From this place, I promised myself when I grew up I would open a sports shop that would bring awareness to the significant change in my life.
+            </p>
+        </div>
+        <div>
+            <iframe src="https://maps.google.com/maps?q=%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94%20%D7%94%D7%90%D7%A7%D7%93%D7%9E%D7%99%D7%AA%20%D7%A1%D7%A4%D7%99%D7%A8&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+        <div class="networks">
+            <a href="https://he-il.facebook.com/" target="_blank"><img src="facebook.png" class="icon-network facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="instagram-sketched.svg" class="icon-network"></a>
+            <a href="https://twitter.com/explore" target="_blank"><img src="twitter.svg" class="icon-network"></a>
+            <a href="https://www.skype.com/he/" target="_blank"><img src="skype.png" class="icon-network"></a>
+            <a href="https://www.youtube.com/he/" target="_blank"><img src="youtube.svg" class="icon-network"></a>
+        </div>
+        <h4 class="come-visit">Come visit us</h4>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>City</th>
+                <th>Street</th>
+                <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tel-Aviv</td>
+                <td>Dizingof 30</td>
+                <td>03-5678787</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rishon-Le-Tzion</td>
+                <td>Moshee Dayan 200</td>
+                <td>03-6943254</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Netanya</td>
+                <td>Hayetzira 1</td>
+                <td>09-4543564</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="contact" id="contact">
+        <form action=" " method="post" autocomplete="on">
+            <h2 class="keep-in-touch">&bull;Keep In Touch&bull;</h2>
+            <div class="input-data">
+                <label for="firstName"><img src="user.png"></label>
+                <input name="name" id="firstName" type="text" placeholder="Full Name">
+            </div>
+            <div class="input-data">
+                <label for="email"><img src="mail.png"></label>
+                <input name="name" id="email" type="text" placeholder="Email">
+            </div>
+            <div class="input-data">
+                <label for="phone"><img src="phone.png"></label>
+                <input name="name" id="phone" type="text" placeholder="Phone Number">
+            </div>
+            <div class="input-data">
+                <textarea name="name" id="textarea" type="text" placeholder="Write your text here..."></textarea>
+            </div>
+            <button class="btn float-right btn-cart" type="submit">Submit</button>
+            <p class="bottom-text">You can also send us an <a href="mailto:gili@mail.sapir.ac.il">e-mail</a></p>
+        </form>
+    </section>
+    <footer>
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://github.com/gilibeni" target="_blank">Hen Sagi Gili</a>
+        </div>
+    </footer>
+</body>
+</html>
